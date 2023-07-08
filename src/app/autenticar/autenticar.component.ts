@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { enviroment } from 'src/enviroments/enviroment';
+
 
 
 @Component({
@@ -48,7 +50,7 @@ export class AutenticarComponent {
     //fazendo uma requisição POST para o serviço de autenticação
     //da API de usuários /POST /api/usuarios/autenticar
     this.httpClient.post(
-      'http://localhost:8080/api/usuarios/autenticar',
+      enviroment.apiUsuarios + '/autenticar',
       this.formAutenticar.value)
       .subscribe({ //capturar o retorno/resposta da API
         next: (data : any) => { //resposta de sucesso!
