@@ -8,6 +8,12 @@
                         <p>Preencha o formulário para cadastrar sua conta de acesso ao sistema.</p>
                     </div>
                     <hr />
+
+                    <div class="text-center mb-2">
+                        <h5 class="text-success">{{mensagem_sucesso}}</h5>
+                        <h5 class="text-bg-danger">{{mensagem_erro}}</h5>
+                    </div>
+
                     <form [formGroup]="formCriarConta" (ngSubmit)="onSubmit()">
                         <div class="mb-2">
                             <label>Nome do Usuário:</label>
